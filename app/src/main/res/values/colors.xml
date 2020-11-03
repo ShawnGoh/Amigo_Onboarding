@@ -18,4 +18,7 @@
     <color name="tab_indicator_grey">#c0c0c0</color>
     <color name="intro_title_color">#3E2117</color>
     <color name="intro_desc_color">#502B1E</color>
+
+
+    <color name="white">#fff</color>
 </resources>

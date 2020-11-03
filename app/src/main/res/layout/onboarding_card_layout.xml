@@ -45,7 +45,7 @@
         android:id="@+id/OnboardingImage"
         android:layout_width="409dp"
         android:layout_height="281dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"

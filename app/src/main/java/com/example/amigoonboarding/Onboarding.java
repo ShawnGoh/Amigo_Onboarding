@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.tabs.TabLayout;
@@ -16,19 +19,24 @@ import java.util.ArrayList;
 public class Onboarding extends AppCompatActivity {
 
     private ViewPager2 onboardingscroller;
-    Button SignupBtn, SigninBtn, SkipBtn;
+    Button SignupBtn, SigninBtn;
     OnboardingViewPagerAdapter onboardingViewPagerAdapter;
     TabLayout tabindicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if(restorePrefData()){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            finish();
+        }
+
         setContentView(R.layout.activity_onboarding);
 
         //Initialize other screen UI elements
         SigninBtn = findViewById(R.id.OnboardingSigninButton);
         SignupBtn = findViewById(R.id.OnboardingSignupButton);
-        SkipBtn = findViewById(R.id.OnboardingSkipButton);
         tabindicator = findViewById(R.id.OnboardingPageIndicator);
 
 
@@ -59,11 +67,47 @@ public class Onboarding extends AppCompatActivity {
                 new TabLayoutMediator.TabConfigurationStrategy() {
                     @Override
                     public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                        tab.setText("");
+                        tab.setText("     ");
                     }
                 }
         ).attach();
+
+
+        SigninBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                saveprefstate();
+            }
+        });
+
+        SignupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                saveprefstate();
+            }
+        });
+
+
         }
+
+    private boolean restorePrefData(){
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("myPref",MODE_PRIVATE);
+        Boolean isuserintroed = pref.getBoolean("isIntroed", false);
+        return isuserintroed;
+    }
+
+    public void saveprefstate(){
+
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("myPref",MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean("isIntroed", true);
+        editor.commit();
+    }
+
 
 
 
