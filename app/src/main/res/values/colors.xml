@@ -8,6 +8,8 @@
     <color name="colorGradientDark">#611111</color>
     <color name="colorGradientLight">#E30808</color>
 
+    <color name="transparent">#00FFFFFF</color>
+
 
     <!-- button style colors -->
     <color name="gradient_start">#BF0000</color>

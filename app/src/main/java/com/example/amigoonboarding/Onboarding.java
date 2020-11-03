@@ -27,10 +27,7 @@ public class Onboarding extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(restorePrefData()){
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            finish();
-        }
+
 
         setContentView(R.layout.activity_onboarding);
 
@@ -67,7 +64,7 @@ public class Onboarding extends AppCompatActivity {
                 new TabLayoutMediator.TabConfigurationStrategy() {
                     @Override
                     public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                        tab.setText("     ");
+                        tab.setText("     " );
                     }
                 }
         ).attach();
@@ -76,18 +73,20 @@ public class Onboarding extends AppCompatActivity {
         SigninBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), SignIn.class));
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 saveprefstate();
+                finish();
             }
         });
 
         SignupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), SignUp.class));
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 saveprefstate();
+                finish();
             }
         });
 
