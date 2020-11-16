@@ -1,8 +1,7 @@
-package com.example.amigoonboarding;
+package com.example.amigoonboarding.onboarding;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
@@ -11,6 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.amigoonboarding.R;
+import com.example.amigoonboarding.signinsignup.SignIn;
+import com.example.amigoonboarding.signinsignup.SignUp;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -74,7 +76,7 @@ public class Onboarding extends AppCompatActivity {
         SigninBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), SignIn.class));
+                startActivity(new Intent(Onboarding.this, SignIn.class));
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 saveprefstate();
                 finish();

@@ -1,4 +1,4 @@
-package com.example.amigoonboarding;
+package com.example.amigoonboarding.onboarding;
 
 public class OnboardingItem {
     private String title, description;

@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignIn"></activity>
-        <activity android:name=".SignUp"></activity>
+        <activity android:name=".profilesetup.ProfileSetupSkills"></activity>
+        <activity android:name=".profilesetup.ProfileSetupProfilePic" />
+        <activity android:name=".profilesetup.ProfileSetupLookingFor" />
+        <activity android:name=".profilesetup.ProfileSetupAboutMe" />
+        <activity android:name=".profilesetup.ProfileSetupBio" />
+        <activity android:name=".signinsignup.SignIn" />
+        <activity android:name=".signinsignup.SignUp" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Onboarding" />
+        <activity android:name=".onboarding.Onboarding" />
         <activity android:name=".MainActivity" />
     </application>
 

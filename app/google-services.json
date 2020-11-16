@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "923733452265",
+    "firebase_url": "https://amigosigninsignup.firebaseio.com",
+    "project_id": "amigosigninsignup",
+    "storage_bucket": "amigosigninsignup.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923733452265:android:88f3383575bd61ad919778",
+        "android_client_info": {
+          "package_name": "com.example.amigoonboarding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923733452265-o2204noqejbpq9ski88cp95uobg3ul3a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzJILLZjkzAtoO3tGtEnJ5-GTZFWtT69U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923733452265-o2204noqejbpq9ski88cp95uobg3ul3a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
